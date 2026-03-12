@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: unused_element, unused_field
 
 part of 'news_api_service.dart';
 
@@ -7,6 +8,7 @@ part of 'news_api_service.dart';
 // **************************************************************************
 
 class _NewsApiService implements NewsApiService {
+  // ignore: unused_element_parameter
   _NewsApiService(this._dio, {this.baseUrl}) {
     baseUrl ??= 'https://newsapi.org/v2';
   }
@@ -17,12 +19,14 @@ class _NewsApiService implements NewsApiService {
 
   @override
   Future<HttpResponse<List<ArticleModel>>> getNewsArticles(
-      {apiKey, country, category}) async {
+      {apiKey, country, category, page, pageSize}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'apiKey': apiKey,
       r'country': country,
-      r'category': category
+      r'category': category,
+      r'page': page,
+      r'pageSize': pageSize,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
