@@ -16,12 +16,14 @@ class ArticleRepositoryImpl implements ArticleRepository {
   ArticleRepositoryImpl(this._newsApiService,this._appDatabase);
   
   @override
-  Future<DataState<List<ArticleModel>>> getNewsArticles() async {
+  Future<DataState<List<ArticleModel>>> getNewsArticles({int page = 1, int pageSize = 20}) async {
    try {
     final httpResponse = await _newsApiService.getNewsArticles(
-      apiKey:newsAPIKey,
-      country:countryQuery,
-      category:categoryQuery,
+      apiKey: newsAPIKey,
+      country: countryQuery,
+      category: categoryQuery,
+      page: page,
+      pageSize: pageSize,
     );
 
     if (httpResponse.response.statusCode == HttpStatus.ok) {
@@ -47,8 +49,9 @@ class ArticleRepositoryImpl implements ArticleRepository {
   }
 
   @override
-  Future<void> removeArticle(ArticleEntity article) {
-    return _appDatabase.articleDAO.deleteArticle(ArticleModel.fromEntity(article));
+  Future<void> removeArticle(ArticleEntity article) async {
+    if (article.id == null) return;
+    await _appDatabase.articleDAO.deleteArticle(ArticleModel.fromEntity(article));
   }
 
   @override
