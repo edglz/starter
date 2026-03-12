@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'app_design.dart';
 
 ThemeData theme() {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppDesign.surface,
     fontFamily: 'Muli',
-    appBarTheme: appBarTheme()
+    appBarTheme: appBarTheme(),
+    colorScheme: const ColorScheme.light(
+      primary: AppDesign.primary,
+      surface: AppDesign.surface,
+      error: AppDesign.error,
+      onPrimary: AppDesign.surface,
+      onSurface: AppDesign.textPrimary,
+      onError: AppDesign.surface,
+    ),
   );
 }
 
 AppBarTheme appBarTheme() {
   return const AppBarTheme(
-    color: Colors.white,
-    elevation: 0,
+    backgroundColor: AppDesign.surface,
+    elevation: 2,
     centerTitle: true,
-    iconTheme: IconThemeData(color: Color(0XFF8B8B8B)),
-    titleTextStyle: TextStyle(color: Color(0XFF8B8B8B), fontSize: 18),
+    iconTheme: IconThemeData(color: AppDesign.appBarIcon),
+    titleTextStyle: TextStyle(color: AppDesign.appBarIcon, fontSize: 18),
   );
 }
