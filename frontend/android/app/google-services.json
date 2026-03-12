@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "835602763853",
+    "project_id": "symmetry-news-eg",
+    "storage_bucket": "symmetry-news-eg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835602763853:android:e364d4fb248898c4f40c04",
+        "android_client_info": {
+          "package_name": "com.example.news_app_clean_architecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835602763853-boc98u2dllathoes86rc0aevh6tshkr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6JpcTU8ZRBmW5OkkSHOAxNQ3coX0h9iI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835602763853-boc98u2dllathoes86rc0aevh6tshkr1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835602763853:android:a90d55ed3d63d131f40c04",
+        "android_client_info": {
+          "package_name": "com.symmetry.newsapp.eg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835602763853-boc98u2dllathoes86rc0aevh6tshkr1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6JpcTU8ZRBmW5OkkSHOAxNQ3coX0h9iI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835602763853-boc98u2dllathoes86rc0aevh6tshkr1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
