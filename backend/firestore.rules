@@ -2,6 +2,33 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // TODO: WRITE ANY NECESSARY FIRESTORE RULES HERE
+
+    match /articles/{articleId} {
+      allow read: if true;
+
+      allow create: if request.auth != null
+        && isValidArticle(request.resource.data);
+
+      allow update: if request.auth != null
+        && request.auth.uid == resource.data.authorId
+        && isValidArticle(request.resource.data);
+
+      allow delete: if request.auth != null
+        && request.auth.uid == resource.data.authorId;
+    }
+
+    function isValidArticle(data) {
+      return data.keys().hasAll(['title', 'authorId', 'publishedAt'])
+        && data.title is string
+        && data.title.size() > 0
+        && data.title.size() <= 200
+        && data.authorId is string
+        && data.publishedAt is timestamp
+        && (!('author' in data) || data.author is string)
+        && (!('description' in data) || data.description is string)
+        && (!('content' in data) || data.content is string)
+        && (!('url' in data) || data.url is string)
+        && (!('urlToImage' in data) || data.urlToImage is string);
+    }
   }
 }
